@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "openai",
+    "description": "openai product",
+    "approvalRequired": false,
+    "state": "notPublished",
+    "subscriptionRequired": true
+  }
+}

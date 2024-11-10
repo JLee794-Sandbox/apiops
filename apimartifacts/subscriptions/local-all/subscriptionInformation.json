@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "Local",
+    "scope": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/apim-sandbox-ncus/providers/Microsoft.ApiManagement/service/apim-prem-ncus/apis",
+    "allowTracing": false,
+    "ownerId": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/apim-sandbox-ncus/providers/Microsoft.ApiManagement/service/apim-prem-ncus/users/1",
+    "state": "active"
+  }
+}

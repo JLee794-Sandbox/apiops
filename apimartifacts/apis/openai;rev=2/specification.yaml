@@ -2318,7 +2318,7 @@ components:
       in: header
     apiKeyQuery:
       type: apiKey
-      name: api-key
+      name: subscription-key
       in: query
 security:
   - apiKeyHeader: [ ]

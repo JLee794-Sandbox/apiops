@@ -1,10 +1,10 @@
 {
   "properties": {
     "path": "openai",
-    "apiRevision": "1",
+    "apiRevision": "2",
+    "apiRevisionDescription": "Adding policy for contentsafety",
     "authenticationSettings": {},
     "description": "Azure OpenAI APIs for completions and search",
-    "isCurrent": true,
     "displayName": "OpenAI",
     "protocols": [
       "https"
@@ -12,7 +12,7 @@
     "serviceUrl": "https://aoai-jlee-eus.openai.azure.com/openai",
     "subscriptionKeyParameterNames": {
       "header": "api-key",
-      "query": "api-key"
+      "query": "subscription-key"
     },
     "subscriptionRequired": true
   }
