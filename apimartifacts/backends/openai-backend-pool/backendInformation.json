@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "description": "Load balancer for multiple OpenAI endpoints",
+    "pool": {
+      "services": [
+        {
+          "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/lab-backend-pool-load-balancing/providers/Microsoft.ApiManagement/service/apim-fma27yzggnpwo/backends/openai1",
+          "priority": 1,
+          "weight": 80
+        },
+        {
+          "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/lab-backend-pool-load-balancing/providers/Microsoft.ApiManagement/service/apim-fma27yzggnpwo/backends/openai2",
+          "priority": 1,
+          "weight": 10
+        },
+        {
+          "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/lab-backend-pool-load-balancing/providers/Microsoft.ApiManagement/service/apim-fma27yzggnpwo/backends/openai3",
+          "priority": 1,
+          "weight": 10
+        }
+      ]
+    },
+    "type": "Pool"
+  }
+}
