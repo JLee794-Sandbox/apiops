@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "OpenAI Subscription",
+    "scope": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/lab-backend-pool-load-balancing/providers/Microsoft.ApiManagement/service/apim-fma27yzggnpwo/apis/openai",
+    "allowTracing": true,
+    "state": "active"
+  }
+}
