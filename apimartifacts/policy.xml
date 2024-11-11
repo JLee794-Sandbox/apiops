@@ -9,11 +9,9 @@
     - Policies are applied in the order of their appearance, from the top down.
 -->
 <policies>
-	<inbound>
-	</inbound>
+	<inbound />
 	<backend>
 		<forward-request />
 	</backend>
-	<outbound>
-	</outbound>
+	<outbound />
 </policies>

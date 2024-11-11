@@ -3,7 +3,7 @@
 		<!-- Content Safety -->
 		<set-variable name="SubscriptionKey" value="@(context.Request.Headers.GetValueOrDefault("api-key"))" />
 		<send-request mode="new" response-variable-name="safetyResponse">
-			<set-url>@("https://" + context.Request.Headers.GetValueOrDefault("Host") + "/contentsafety/text:analyze?api-version=2023-10-01")</set-url>
+			<set-url>@("https://" + context.Request.Headers.GetValueOrDefault("Host") + "/contentsafety/text:shieldPrompt?api-version=2024-02-15-preview")</set-url>
 			<set-method>POST</set-method>
 			<set-header name="Ocp-Apim-Subscription-Key" exists-action="override">
 				<value>@(context.Variables.GetValueOrDefault<string>("SubscriptionKey"))</value>
@@ -20,8 +20,8 @@
 				obj.Add(textProperty);
 				obj.Add(categoriesProperty);
 				obj.Add(outputTypeProperty);
-				return obj.ToString();
-			}</set-body>
+                return obj.ToString();
+            }</set-body>
 		</send-request>
 		<choose>
 			<when condition="@(((IResponse)context.Variables["safetyResponse"]).StatusCode == 200)">

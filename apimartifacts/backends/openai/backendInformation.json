@@ -9,6 +9,6 @@
       "validateCertificateChain": true,
       "validateCertificateName": true
     },
-    "url": "https://aoai-jlee-ncus.openai.azure.com/openai"
+    "url": "https://aoai-jlee-eus.openai.azure.com/openai"
   }
 }

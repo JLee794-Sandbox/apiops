@@ -1,0 +1,5 @@
+{
+  "properties": {
+    "description": "Sets the authentication header for managed identity auth for cognitive services"
+  }
+}

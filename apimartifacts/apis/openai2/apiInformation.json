@@ -1,18 +1,18 @@
 {
   "properties": {
-    "path": "openai",
+    "path": "openai2/openai",
     "apiRevision": "1",
     "authenticationSettings": {},
     "description": "Azure OpenAI APIs for completions and search",
     "isCurrent": true,
-    "displayName": "OpenAI",
+    "displayName": "OpenAI2",
     "protocols": [
       "https"
     ],
-    "serviceUrl": "https://aoai-jlee-eus.openai.azure.com/openai",
+    "serviceUrl": "https://aoai-jlee-ncus.openai.azure.com/openai",
     "subscriptionKeyParameterNames": {
       "header": "api-key",
-      "query": "api-key"
+      "query": "subscription-key"
     },
     "subscriptionRequired": true
   }
