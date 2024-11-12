@@ -1,0 +1,24 @@
+apimServiceName: [apim-prem-ncus]
+namedValues:
+  - name: environment
+    properties:
+      displayName: environment
+      value: "https://www.search2.com"
+  - name: mysecretvalue
+    properties:
+      displayName: mysecretvalue
+      keyVault:
+        identityClientId: [identity client id goes here]
+        secretIdentifier: [your url here]
+  - name: testSecret
+    properties:
+      displayName: testSecret
+      value: "{#testSecretValue#}"
+  - name: helloworldfromfuncapp-key
+    properties:
+      displayName: helloworldfromfuncapp-key
+      value: "{#helloworldfromfuncappkey#}"
+  - name: 634e022983908257b35630b0
+    properties:
+      displayName: helloworldfromlogicapp_manual-invoke_634e022983908257b35630b0
+      value: "{#helloworldfromlogicapp#}"  
