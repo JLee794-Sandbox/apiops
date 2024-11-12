@@ -1,5 +1,27 @@
 {
   "properties": {
+    "circuitBreaker": {
+      "rules": [
+        {
+          "acceptRetryAfter": true,
+          "failureCondition": {
+            "count": 1,
+            "errorReasons": [
+              "Server errors"
+            ],
+            "interval": "PT5M",
+            "statusCodeRanges": [
+              {
+                "max": 429,
+                "min": 429
+              }
+            ]
+          },
+          "name": "openAIBreakerRule",
+          "tripDuration": "PT1M"
+        }
+      ]
+    },
     "credentials": {
       "header": {},
       "query": {}
