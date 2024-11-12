@@ -1,4 +1,4 @@
-<!--
+<!-- <!--
     IMPORTANT:
     - Policy fragment are included as-is whenever they are referenced.
     - If using variables. Ensure they are setup before use.
@@ -24,4 +24,4 @@
 			</return-response>
 		</when>
 	</choose>
-</fragment>
+</fragment> -->
