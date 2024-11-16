@@ -24,6 +24,6 @@
     },
     "description": "backend description",
     "protocol": "http",
-    "url": "https://openai3-fma27yzggnpwo.openai.azure.com/openai"
+    "url": "https://aoai-jlee-wus.openai.azure.com/openai"
   }
 }
