@@ -1,0 +1,37 @@
+# HTTP
+
+# Copy
+# POST https://management.azure.com/subscriptions/{{$dotenv SUBSCRIPTION_ID}}/resourceGroups/{{$dotenv RESOURCE_GROUP_NAME}}/providers/Microsoft.ApiManagement/service/{{$dotenv APIM_NAME}}/gateways/managed/listDebugCredentials?api-version=2023-05-01-preview
+# In the request body, pass the full resource ID of the API that you want to trace, and specify purposes as tracing. By default the token credential returned in the response expires after 1 hour, but you can specify a different value in the payload. For example:
+
+# JSON
+
+# Copy
+# {
+#     "credentialsExpireAfter": PT1H,
+#     "apiId": ""/subscriptions/{{$dotenv SUBSCRIPTION_ID}}/resourceGroups/{{$dotenv RESOURCE_GROUP_NAME}}/providers/Microsoft.ApiManagement/service/{{$dotenv APIM_NAME}}/apis/{{$dotenv API_NAME}}",
+#     "purposes": ["tracing"]
+# }
+
+POST https://management.azure.com/subscriptions/{{$dotenv SUBSCRIPTION_ID}}/resourceGroups/{{$dotenv RESOURCE_GROUP_NAME}}/providers/Microsoft.ApiManagement/service/{{$dotenv APIM_NAME}}/gateways/managed/listDebugCredentials?api-version=2023-05-01-preview
+Content-Type: application/json
+Authorization: Bearer {{$dotenv ACCESS_TOKEN}}
+
+{
+    "credentialsExpireAfter": "PT1H",
+    "apiId": "/subscriptions/{{$dotenv SUBSCRIPTION_ID}}/resourceGroups/{{$dotenv RESOURCE_GROUP_NAME}}/providers/Microsoft.ApiManagement/service/{{$dotenv APIM_NAME}}/apis/{{$dotenv API_NAME}}",
+    "purposes": ["tracing"]
+}
+
+# 2. Add the token value in an Apim-Debug-Authorization request header to the API Management gateway.
+
+GET https://apim-prem-ncus.azure-api.net/{{$dotenv API_PATH}}
+Apim-Debug-Authorization: {{$dotenv token}}
+Ocp-Apim-Subscription-Key: {{$dotenv SUBSCRIPTION_KEY}}
+
+# 3. Obtain a trace ID in the Apim-Trace-Id response header.
+
+# 4. Retrieve the trace corresponding to the trace ID.
+
+GET https://management.azure.com/subscriptions/{{$dotenv SUBSCRIPTION_ID}}/resourceGroups/{{$dotenv RESOURCE_GROUP_NAME}}/providers/Microsoft.ApiManagement/service/{{$dotenv APIM_NAME}}/traces/{{$dotenv TRACE_ID}}?api-version=2023-05-01-preview
+Authorization: Bearer {{$dotenv ACCESS_TOKEN}}
