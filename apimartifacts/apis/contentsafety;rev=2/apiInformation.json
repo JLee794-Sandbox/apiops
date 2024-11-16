@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "contentsafety",
+    "apiRevision": "2",
+    "apiRevisionDescription": "Working state",
+    "authenticationSettings": {},
+    "description": "Analyze harmful content",
+    "displayName": "ContentSafety",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://shared-contentsafety-ncus.cognitiveservices.azure.com//contentsafety",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}
