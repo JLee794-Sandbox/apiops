@@ -1,0 +1,6 @@
+    <backend>
+        <!--Set count to one less than the number of backends in the pool to try all backends until the backend pool is temporarily unavailable.-->
+        <retry condition="@(context.Response.StatusCode == 403)" count="2" interval="1" first-fast-retry="true">
+            <forward-request />
+        </retry>
+    </backend>
