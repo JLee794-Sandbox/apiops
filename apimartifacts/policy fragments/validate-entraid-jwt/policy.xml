@@ -1,0 +1,13 @@
+<!--
+    IMPORTANT:
+    - Policy fragment are included as-is whenever they are referenced.
+    - If using variables. Ensure they are setup before use.
+    - Copy and paste your code here or simply start coding
+-->
+<fragment>
+	<validate-azure-ad-token tenant-id="{{entra-tenant-id}}">
+		<client-application-ids>
+			<application-id>{{entra-frontend-client-id}}</application-id>
+		</client-application-ids>
+	</validate-azure-ad-token>
+</fragment>
