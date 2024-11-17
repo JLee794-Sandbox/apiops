@@ -5,7 +5,7 @@
 				<application-id>{{entra-frontend-client-id}}</application-id>
 			</client-application-ids>
 		</validate-azure-ad-token>
-		<set-backend-service id="apim-generated-policy" backend-id="openai-backend-pool" />
+		<set-backend-service id="supercool-backend-pool" backend-id="openai-backend-pool" />
 		<azure-openai-token-limit tokens-per-minute="1000" counter-key="@(context.Subscription.Id)" estimate-prompt-tokens="true" tokens-consumed-header-name="consumed-tokens" remaining-tokens-header-name="remaining-tokens" />
 		<azure-openai-emit-token-metric>
 			<dimension name="Subscription ID" />
