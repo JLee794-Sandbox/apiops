@@ -6,17 +6,17 @@
         {
           "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/apim-sandbox-ncus/providers/Microsoft.ApiManagement/service/apim-prem-ncus/backends/openai",
           "priority": 1,
-          "weight": 80
+          "weight": 20
         },
         {
           "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/apim-sandbox-ncus/providers/Microsoft.ApiManagement/service/apim-prem-ncus/backends/openai2",
           "priority": 1,
-          "weight": 10
+          "weight": 80
         },
         {
           "id": "/subscriptions/63862159-43c8-47f7-9f6f-6c63d56b0e17/resourceGroups/apim-sandbox-ncus/providers/Microsoft.ApiManagement/service/apim-prem-ncus/backends/openai3",
-          "priority": 1,
-          "weight": 10
+          "priority": 2,
+          "weight": 0
         }
       ]
     },

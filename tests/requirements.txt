@@ -2,3 +2,4 @@ dotenv
 openai
 pandas
 matplotlib
+msal

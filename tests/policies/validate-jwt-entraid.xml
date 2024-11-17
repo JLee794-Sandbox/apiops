@@ -1,0 +1,12 @@
+        <validate-azure-ad-token tenant-id="<tenant-id>">
+            <client-application-ids>
+                <application-id>APPLICATION-CLIENT-ID</application-id>
+            </client-application-ids>
+        </validate-azure-ad-token>
+
+
+        <!-- validate-azure-ad-token tenant-id="{{entra-tenant-id}}">
+            <client-application-ids>
+                <application-id>{{entra-frontend-client-id}}</application-id>
+            </client-application-ids>
+        </validate-azure-ad-token -->
