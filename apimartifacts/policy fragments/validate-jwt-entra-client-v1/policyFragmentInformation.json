@@ -1,5 +1,0 @@
-{
-  "properties": {
-    "description": "This is an example of how you could validate a client application using a JWT token issued by Entraid."
-  }
-}
