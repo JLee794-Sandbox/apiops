@@ -886,6 +886,13 @@ paths:
                     revised_prompt: string
                   code: string
                   message: string
+  /test:
+    get:
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK
 components:
   schemas:
     errorResponse:
