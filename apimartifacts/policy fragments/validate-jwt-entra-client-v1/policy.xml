@@ -5,9 +5,9 @@
     - Copy and paste your code here or simply start coding
 -->
 <fragment>
-    <validate-azure-ad-token tenant-id="{entraid-tenant}">
+    <validate-azure-ad-token tenant-id="@(context.Request.Variable['TENANT-ID'])">
         <client-application-ids>
-            <application-id>{entraid-frontend-client-id}</application-id>
+            <application-id>@(context.Request.Variable['CLIENT-ID'])</application-id>
         </client-application-ids>
     </validate-azure-ad-token>
 </fragment>
