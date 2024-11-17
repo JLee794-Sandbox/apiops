@@ -12,10 +12,6 @@
             "interval": "PT5M",
             "statusCodeRanges": [
               {
-                "max": 403,
-                "min": 403
-              },
-              {
                 "max": 429,
                 "min": 429
               }

@@ -1,0 +1,12 @@
+
+    <backend>
+        <set-backend-service base-url="https://openai1.example.com" />
+        <choose>
+            <when condition="@(context.Response.StatusCode == 403 || context.Response.StatusCode == 500 || context.Response.StatusCode == 503)">
+                <set-backend-service base-url="https://openai2.example.com" />
+            </when>
+            <when condition="@(context.Response.StatusCode == 403 || context.Response.StatusCode == 500 || context.Response.StatusCode == 503)">
+                <set-backend-service base-url="https://openai3.example.com" />
+            </when>
+        </choose>
+    </backend>

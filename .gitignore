@@ -1,6 +1,2 @@
 *.ipynb
-<<<<<<< Updated upstream
-.env
-=======
 *.env
->>>>>>> Stashed changes
