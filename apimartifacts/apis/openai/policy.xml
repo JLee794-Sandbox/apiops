@@ -1,6 +1,5 @@
 <policies>
 	<inbound>
-		
 		<!-- Content Safety -->
 		<set-variable name="SubscriptionKey" value="@(context.Request.Headers.GetValueOrDefault("api-key"))" />
 		<send-request mode="new" response-variable-name="safetyResponse">

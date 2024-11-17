@@ -888,8 +888,8 @@ paths:
                   message: string
   /test:
     get:
-      description: ''
-      parameters: []
+      summary: /test - GET
+      operationId: get-test
       responses:
         '200':
           description: OK
