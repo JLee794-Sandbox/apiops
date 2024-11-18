@@ -2,7 +2,6 @@
   "properties": {
     "displayName": "entraid-tenant",
     "secret": true,
-    "tags": [],
-    "value": "9249ded8-dff5-4e90-9d80-3ae45c13ec3f"
+    "tags": []
   }
 }
