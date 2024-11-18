@@ -1,7 +1,0 @@
-{
-  "properties": {
-    "displayName": "entraid-tenant",
-    "secret": true,
-    "tags": []
-  }
-}

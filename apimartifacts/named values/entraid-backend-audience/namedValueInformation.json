@@ -1,7 +1,0 @@
-{
-  "properties": {
-    "displayName": "entraid-backend-audience",
-    "secret": true,
-    "tags": []
-  }
-}

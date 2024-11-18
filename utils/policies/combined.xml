@@ -1,5 +1,6 @@
 <policies>
     <inbound>
+        <!--  -->
         <validate-azure-ad-token tenant-id="{{entra-tenant-id}}">
             <client-application-ids>
                 <application-id>{{entra-frontend-client-id}}</application-id>
