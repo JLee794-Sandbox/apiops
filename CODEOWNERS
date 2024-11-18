@@ -1,0 +1,10 @@
+# This is a CODEOWNERS file.
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# Specify the owners for the entire repository
+* @JLee794
+
+# Specify the owners for the extractor config files
+configuration.extractor.yaml
+apimartifacts/apis/genaigw/ @JLee794
