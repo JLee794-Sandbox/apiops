@@ -6,18 +6,20 @@
 			</client-application-ids>
 		</validate-azure-ad-token>
 		<set-backend-service id="supercool-backend-pool" backend-id="openai-backend-pool" />
-		<azure-openai-token-limit tokens-per-minute="1000" counter-key="@(context.Subscription.Id)" estimate-prompt-tokens="true" tokens-consumed-header-name="consumed-tokens" remaining-tokens-header-name="remaining-tokens" />
+		<azure-openai-token-limit tokens-per-minute="10000" counter-key="@(context.Subscription.Id)" estimate-prompt-tokens="true" tokens-consumed-header-name="consumed-tokens" remaining-tokens-header-name="remaining-tokens" />
 		<azure-openai-emit-token-metric>
 			<dimension name="Subscription ID" />
 			<dimension name="Client IP address" value="@(context.Request.IpAddress)" />
 			<dimension name="API ID" />
 		</azure-openai-emit-token-metric>
-		<authentication-managed-identity resource="https://cognitiveservices.azure.com/" />
 		<azure-openai-semantic-cache-lookup score-threshold="0.8" embeddings-backend-id="embeddings-backend" embeddings-backend-auth="system-assigned" />
 		<base />
 	</inbound>
 	<backend>
-		<base />
+		<!-- set the count to the number of backends so that the retries could be done against all backends-->
+		<retry condition="@(context.Response.StatusCode == 429)" count="3" interval="1" first-fast-retry="true">
+			<forward-request buffer-request-body="true" />
+		</retry>
 	</backend>
 	<outbound>
 		<base />

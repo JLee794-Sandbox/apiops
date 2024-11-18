@@ -12,6 +12,10 @@
             "interval": "PT5M",
             "statusCodeRanges": [
               {
+                "max": 403,
+                "min": 403
+              },
+              {
                 "max": 429,
                 "min": 429
               }
@@ -22,15 +26,8 @@
         }
       ]
     },
-    "credentials": {
-      "header": {},
-      "query": {}
-    },
+    "description": "backend description",
     "protocol": "http",
-    "tls": {
-      "validateCertificateChain": true,
-      "validateCertificateName": true
-    },
-    "url": "https://aoai-jlee-eus.openai.azure.com/openai"
+    "url": "https://openai1-fma27yzggnpwo.openai.azure.com/openai"
   }
 }
