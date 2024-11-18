@@ -1,0 +1,27 @@
+<policies>
+    <inbound>
+        <validate-azure-ad-token tenant-id="{{entra-tenant-id}}">
+            <client-application-ids>
+                <application-id>{{entra-frontend-client-id}}</application-id>
+            </client-application-ids>
+        </validate-azure-ad-token>
+        <set-backend-service id="supercool-backend-pool" backend-id="openai-backend-pool" />
+        <azure-openai-token-limit tokens-per-minute="1000" counter-key="@(context.Subscription.Id)" estimate-prompt-tokens="true" tokens-consumed-header-name="consumed-tokens" remaining-tokens-header-name="remaining-tokens" />
+        <azure-openai-emit-token-metric>
+            <dimension name="Subscription ID" />
+            <dimension name="Client IP address" value="@(context.Request.IpAddress)" />
+            <dimension name="API ID" />
+        </azure-openai-emit-token-metric>
+        <azure-openai-semantic-cache-lookup score-threshold="0.8" embeddings-backend-id="embeddings-backend" embeddings-backend-auth="system-assigned" />
+        <base />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

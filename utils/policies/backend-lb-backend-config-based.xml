@@ -1,6 +1,11 @@
+    <inbound>
+        <set-backend-service backend-id="openai-backend-pool" />
+        <set-variable name="retryCount" value="@(int.Parse(" {{retryCount}}"))" />
+        <set-variable name="maxRetryCount" value="@((int)context.Variables[" retryCount"] -1)" />
+    </inbound>
     <backend>
-        <!--Set count to one less than the number of backends in the pool to try all backends until the backend pool is temporarily unavailable.-->
-        <retry condition="@(context.Response.StatusCode == 403)" count="2" interval="1" first-fast-retry="true">
-            <forward-request />
+        <!-- set the count to the number of backends so that the retries could be done against all backends-->
+        <retry condition="@(context.Response.StatusCode == 429)" count="3" interval="1" first-fast-retry="true">
+            <forward-request buffer-request-body="true" />
         </retry>
     </backend>
