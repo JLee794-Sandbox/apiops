@@ -886,14 +886,6 @@ paths:
                     revised_prompt: string
                   code: string
                   message: string
-  /test:
-    get:
-      summary: /test - GET
-      description: /test - GET
-      operationId: get-test
-      responses:
-        '200':
-          description: OK
 components:
   schemas:
     errorResponse:
@@ -2322,7 +2314,7 @@ components:
       in: header
     apiKeyQuery:
       type: apiKey
-      name: api-key
+      name: subscription-key
       in: query
 security:
   - apiKeyHeader: [ ]
