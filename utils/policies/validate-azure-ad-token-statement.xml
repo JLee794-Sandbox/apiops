@@ -1,0 +1,32 @@
+<validate-azure-ad-token
+    tenant-id="tenant ID or URL (for example, "https://contoso.onmicrosoft.com") of the Microsoft Entra ID tenant"
+    header-name="name of HTTP header containing the token (alternatively, use query-parameter-name or token-value attribute to specify token)"
+    query-parameter-name="name of query parameter used to pass the token (alternative, use header-name or token-value attribute to specify token)"
+    token-value="expression returning the token as a string (alternatively, use header-name or query-parameter attribute to specify token)"
+    failed-validation-httpcode="HTTP status code to return on failure"
+    failed-validation-error-message="error message to return on failure"
+    output-token-variable-name="name of a variable to receive a JWT object representing successfully validated token">
+    <client-application-ids>
+        <application-id>Client application ID from Microsoft Entra</application-id>
+        <!-- If there are multiple client application IDs, then add additional application-id elements -->
+    </client-application-ids>
+    <backend-application-ids>
+        <application-id>Backend application ID from Microsoft Entra</application-id>
+        <!-- If there are multiple backend application IDs, then add additional application-id elements -->
+    </backend-application-ids>
+    <audiences>
+        <audience>audience string</audience>
+        <!-- if there are multiple possible audiences, then add additional audience elements -->
+    </audiences>
+    <required-claims>
+        <claim name="name of the claim as it appears in the token" match="all|any" separator="separator character in a multi-valued claim">
+            <value>claim value as it is expected to appear in the token</value>
+            <!-- if there is more than one allowed value, then add additional value elements -->
+        </claim>
+        <!-- if there are multiple possible allowed values, then add additional value elements -->
+    </required-claims>
+    <decryption-keys>
+        <key certificate-id="mycertificate"/>
+        <!-- if there are multiple keys, then add additional key elements -->
+    </decryption-keys>
+</validate-azure-ad-token>

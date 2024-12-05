@@ -14,26 +14,36 @@ from colorlog import ColoredFormatter
 import colorlog
 import logging
 
-def initialize_logging(level):
-    formatter = ColoredFormatter(
-        "%(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s",
-        datefmt=None,
-        reset=True,
-        log_colors={
-            'DEBUG':    'cyan',
-            'INFO':     'green',
-            'WARNING':  'yellow',
-            'ERROR':    'red',
-            'CRITICAL': 'red,bg_white',
-        },
-        secondary_log_colors={},
-        style='%'
-    )
-    handler = colorlog.StreamHandler()
-    handler.setFormatter(formatter)
+import logging
+from colorlog import ColoredFormatter
+
+def initialize_logging(level=logging.DEBUG):
     logger = logging.getLogger('demo')
-    logger.addHandler(handler)
-    logger.setLevel(level)
+    
+    # Check if the logger already has handlers
+    if not logger.hasHandlers():
+        # Configure logging
+        formatter = ColoredFormatter(
+            "%(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s",
+            datefmt=None,
+            reset=True,
+            log_colors={
+                'DEBUG':    'cyan',
+                'INFO':     'green',
+                'WARNING':  'yellow',
+                'ERROR':    'red',
+                'CRITICAL': 'red,bg_white',
+            },
+            secondary_log_colors={},
+            style='%'
+        )
+        handler = logging.StreamHandler()
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+        logger.setLevel(level)
+    
+    # Set propagate to False to prevent double logging
+    logger.propagate = False
     return logger
 
 class APIClient:
