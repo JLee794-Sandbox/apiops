@@ -1,5 +1,5 @@
 
-    <backend>
+    <inbound>
         <set-backend-service backend-id="openai" />
         <choose>
             <when condition="@(context.Response.StatusCode == 403 || context.Response.StatusCode == 500 || context.Response.StatusCode == 503)">
@@ -9,4 +9,8 @@
                 <set-backend-service backend-id="openai3" />
             </when>
         </choose>
+        <base />
+    </inbound>
+    <backend>
+        <base />
     </backend>
